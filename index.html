@@ -224,6 +224,21 @@
       allowfullscreen>
     </iframe>
   </section>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.classList.remove("active"));
+
+      const links = document.querySelectorAll("nav a");
+      links.forEach(link => link.classList.remove("active"));
+
+      document.getElementById(sectionId).classList.add("active");
+      const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+      activeLink.classList.add("active");
+    }
+  </script>
+<a href="https://drive.google.com/file/d/1-l25iSs6KCmJeKHDYkr4Tj3eZAseL8Pr/view?usp=drive_link" download="https://drive.google.com/file/d/1-l25iSs6KCmJeKHDYkr4Tj3eZAseL8Pr/view?usp=drive_link" class="explore-button">DOWNLOAD CV
+</a>
 
   <section id="skills">
     <h2>Skills</h2>
@@ -245,20 +260,6 @@
     © 2025 Renze Aguirre | All Rights Reserved
   </footer>
 
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll("section");
-      sections.forEach(section => section.classList.remove("active"));
-
-      const links = document.querySelectorAll("nav a");
-      links.forEach(link => link.classList.remove("active"));
-
-      document.getElementById(sectionId).classList.add("active");
-      const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-      activeLink.classList.add("active");
-    }
-  </script>
-<a href="https://drive.google.com/file/d/1-l25iSs6KCmJeKHDYkr4Tj3eZAseL8Pr/view?usp=drive_link" download="https://drive.google.com/file/d/1-l25iSs6KCmJeKHDYkr4Tj3eZAseL8Pr/view?usp=drive_link" class="explore-button">DOWNLOAD CV
-</a>
+  
 </body>
 </html>

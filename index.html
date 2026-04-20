@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renze Aguirre | Portfolio</title>
-  <style>
-       
-    body {
-      font-family: 'Poppins', sans-serif;
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <style>       
+    body { 
       background-color: #F3F4F6;
       color: #111827;
       margin: 0;
@@ -151,6 +152,67 @@
       margin-top: 60px;
       border-top: 3px solid #3B82F6;
     }
+
+    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+
+  background: linear-gradient(-45deg, #1E3A8A, #3B82F6, #6366F1, #1E40AF);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* animated gradient */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* glass effect for sections */
+section {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+    .chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.chat-header {
+  background: #1E3A8A;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-body {
+  height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-body p {
+  margin: 5px 0;
+}
+
+#chatInput {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  outline: none;
+}
   </style>
 </head>
 <body>
@@ -193,9 +255,11 @@
 
     <p><b>WordPress Portfolio</b></p>
     <img src="wordpress.jpg" alt="WordPress Portfolio" width="150" height="150"><br>
-    <p><b>Certificate</b></p>
-    <img src="/DigitalSafetyandSecurityAwarenessv120260225-29-sked95.pdf" alt="Certificate" width="150" height="150"><br>
     
+    <p><b>Certificate</b></p>
+   <a href="DigitalSafetyandSecurityAwarenessv120260225-29-sked95.pdf" target="_blank">
+  View Certificate
+</a>
 
     <h2>GITHUB TUTORIAL</h2>
     <iframe width="250" height="250"
@@ -237,9 +301,45 @@
       activeLink.classList.add("active");
     }
   </script>
-<a href="https://drive.google.com/file/d/1ARwgpgDAKNY4DP9C-RSfyg3tCZcAR2BV/view?usp=drivesdk" download="https://drive.google.com/file/d/1ARwgpgDAKNY4DP9C-RSfyg3tCZcAR2BV/view?usp=drivesdk" class="explore-button">DOWNLOAD CV
-</a>
 
+<script>
+function handleChat(e) {
+  if (e.key === "Enter") {
+    let input = document.getElementById("chatInput");
+    let message = input.value.toLowerCase();
+    let chatBody = document.getElementById("chatBody");
+
+    chatBody.innerHTML += "<p><b>You:</b> " + input.value + "</p>";
+
+    let reply = "Sorry, I don't understand.";
+
+    if (message.includes("name")) {
+      reply = "My name is Renze Aguirre.";
+    } 
+    else if (message.includes("skills")) {
+      reply = "I have skills in HTML, CSS, JavaScript, Graphic Design, and Video Editing.";
+    } 
+    else if (message.includes("projects")) {
+      reply = "I worked on EVAD ABAZER, Glucometer Layout, and a WordPress Portfolio.";
+    } 
+    else if (message.includes("contact")) {
+      reply = "You can contact me at renze.aguirre2@gmail.com.";
+    } 
+    else if (message.includes("who are you")) {
+      reply = "I am an aspiring IT student passionate about web design and creativity.";
+    }
+
+    chatBody.innerHTML += "<p><b>Bot:</b> " + reply + "</p>";
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    input.value = "";
+  }
+}
+</script>
+  
+<a href="https://drive.google.com/file/d/1ARwgpgDAKNY4DP9C-RSfyg3tCZcAR2BV/view" target="_blank">
+  DOWNLOAD CV
+</a>
   <section id="skills">
     <h2>Skills</h2>
     <ul>
@@ -260,6 +360,10 @@
     © 2025 Renze Aguirre | All Rights Reserved
   </footer>
 
-  
+  <div class="chatbot">
+  <div class="chat-header">Ask Me 👋</div>
+  <div class="chat-body" id="chatBody"></div>
+  <input type="text" id="chatInput" placeholder="Ask something..." onkeypress="handleChat(event)">
+</div>
 </body>
 </html>

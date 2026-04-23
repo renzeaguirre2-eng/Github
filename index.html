@@ -221,6 +221,23 @@
       outline: none;
       box-sizing: border-box;
     }
+
+    /* New Contact Input Styles */
+    .contact-form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-form input {
+      width: 80%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -267,6 +284,9 @@
     <p><b>WordPress Portfolio</b></p>
     <img src="wordpress.jpg" alt="WordPress Portfolio" width="150" height="150"><br>
     
+    <p><b>Dos Shop (Figma Design)</b></p>
+    <a href="https://www.figma.com/design/cMJtAolNVlcYNHoPhjMYDn/Dos-Shop?node-id=0-1&t=CObmUo5hWiXS20YG-1" target="_blank" class="cv-button" style="margin-top: 0;">VISIT FIGMA SITE</a><br>
+
     <h3>Certificates</h3>
     <a href="https://maquetisoy5-gnvsr.wordpress.com/wp-content/uploads/2026/04/messenger_creation_57a590ef-f480-4278-8760-0ba88b30c2b28218794626847686819.jpeg?w=655" target="_blank">View Certificate 1</a> | 
     <a href="https://maquetisoy5-gnvsr.wordpress.com/wp-content/uploads/2026/04/img_20260420_134229_8513699888845530807882-1.jpeg?w=922" target="_blank">View Certificate 2</a> | 
@@ -296,6 +316,12 @@
     <h2>Contact</h2>
     <p><b>Email:</b> renze.aguirre2@gmail.com</p>
     <p><b>Phone:</b> 0994-867-3654</p>
+    
+    <div class="contact-form">
+      <input type="text" placeholder="Name:">
+      <input type="email" placeholder="Email:">
+      <button class="cv-button" style="border: none; cursor: pointer; margin-top: 5px;">SEND</button>
+    </div>
   </section>
 
   <footer>
